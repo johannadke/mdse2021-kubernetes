@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp #
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp #
+  template: # Blueprint/Main Configuration for Pods
+    metadata:
+      labels:
+        app: webapp #
+    spec:
+      containers:
+        - name: mongoexpress #
+          image: mongo-express:0.54 #
+          ports:
+            - containerPort: 8081 #
+
+          env: # Ist eine Liste von Umgebungsvariablen
+            - name: ME_CONFIG_BASICAUTH_USERNAME #
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: db-user
+            - name: ME_CONFIG_BASICAUTH_PASSWORD #
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: db-password
+            - name: ME_CONFIG_MONGODB_SERVER #
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: db-url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  type: NodePort # Um einen Externen Service zu erstellen
+  selector:
+    app: webapp
+  ports:
+    - protocol: TCP
+      port: 8081 #
+      targetPort: 8081 #
+      nodePort: 30000 # (30000 - 32767) Port Range
