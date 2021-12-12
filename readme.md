@@ -1,1 +1,1 @@
-# MDSE 2021 - Kubernetes
+# MDSE 2021 - Gruppe Kubernetes
