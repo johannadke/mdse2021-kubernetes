@@ -42,20 +42,21 @@ minikube start
 # Minikube + Kubectl Basic Commands
 
 - Minikube Status anzeigen:
+
 ```
 minikube status
 ```
 
 - Bestimmte k8s-Komponente im Minikube anzeigen (ohne Klammern angeben!):
+
 ```
 kubectl get (nodes/deployments/pods...)
+
+kubectl get deployments     # z.B. alle Deployments anzeigen
 ```
-    - zum Beispiel alle deployments anzeigen:
-    ```
-    kubectl get deployments
-    ```
 
 - Deployments erstellen:
+
 ```
 kubectl create deployment Name --image=image
 ```
