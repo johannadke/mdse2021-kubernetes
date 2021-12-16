@@ -1,6 +1,6 @@
 # Commands
 
-1. Alle Komponente in den YAML-Konfigurationen sollen deployed werden:
+1. Alle angegebene Komponenten sollen deployed werden:
 
 ```
 kubectl apply -f demo/
