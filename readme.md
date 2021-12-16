@@ -11,7 +11,9 @@
 
 ---
 
-## Installation (Ubuntu)
+<br>
+
+## 1. Installation (Ubuntu)
 
 ```
 sudo apt install curl
@@ -25,7 +27,9 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-## Minikube Setup
+<br>
+
+## 2. Minikube Setup
 
 ```
 minikube config set driver docker
@@ -37,9 +41,9 @@ sudo usermod -aG docker $USER && newgrp docker
 minikube start
 ```
 
----
+<br>
 
-# Minikube + Kubectl Basic Commands
+## 3. Minikube + Kubectl Basic Commands
 
 - Minikube Status anzeigen:
 
