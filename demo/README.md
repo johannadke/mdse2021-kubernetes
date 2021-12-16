@@ -1,13 +1,13 @@
 # Commands
 
-Alles ausführen:
+1. Alle Komponente in den YAML-Konfigurationen sollen deployed werden:
 
 ```
 kubectl apply -f demo/
 ```
 
 
-Minikube Dahboard öffnen:
+2. Minikube Dahboard öffnen:
 ```
 minikube dashboard
 ```
