@@ -11,8 +11,6 @@
 
 ---
 
-<br>
-
 ## 1. Installation (Ubuntu)
 
 ```

@@ -12,5 +12,5 @@ kubectl apply -f demo/
 minikube dashboard
 ```
 
-
+![Demo Bild](demo.png)
 
